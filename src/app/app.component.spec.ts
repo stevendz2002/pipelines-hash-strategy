@@ -13,7 +13,7 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
 
-    expect(fixture.nativeElement.querySelector('.brand').textContent).toContain('HashMap');
-    expect(fixture.nativeElement.querySelector('.main-content')).not.toBeNull();
+    expect(fixture.nativeElement.querySelector('.brand').textContent).toContain('PokéDex');
+    expect(fixture.nativeElement.querySelectorAll('nav a').length).toBe(3);
   });
 });
