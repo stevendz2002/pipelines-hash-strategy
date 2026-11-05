@@ -14,6 +14,10 @@ h1 { margin: .5rem 0 1rem; font-size: clamp(2.5rem, 7vw, 5rem); line-height: 1.0
 .feature-grid article { padding: 1.25rem; border: 1px solid #263b5c; border-radius: .75rem; background: #111c30; }
 .feature-grid span { color: #fbbf24; } h2 { margin-top: .5rem; }
 .page-heading { max-width: 650px; } .page-heading h1 { font-size: clamp(2.5rem, 6vw, 4rem); }
+.pokemon-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-top: 2rem; }
+.pokemon-card, .info-panel { padding: 1.25rem; border: 1px solid #263b5c; border-radius: .75rem; background: #111c30; }
+.pokemon-card { text-align: center; } .pokemon-card img { width: 120px; height: 120px; image-rendering: pixelated; } .pokemon-card a { color: #7dd3fc; }
+.status { color: #7dd3fc; } .error { color: #fca5a5; }
 
 .status { color: #7dd3fc; } .error { color: #fca5a5; } code { color: #fbbf24; }
 footer { padding: 1.5rem 6vw; border-top: 1px solid #22314b; color: #71819b; text-align: center; } footer a { color: #7dd3fc; }
