@@ -1,3 +1,23 @@
+const fs = require("fs");
+const { execSync } = require("child_process");
+
+if (!process.env.CHROME_BIN) {
+  try {
+    execSync("which google-chrome || which google-chrome-stable || which chromium || which chromium-browser", { stdio: "ignore" });
+  } catch {
+    try {
+      execSync("which firefox", { stdio: "ignore" });
+      const wrapperPath = "/tmp/firefox-chrome-wrapper.sh";
+      fs.writeFileSync(
+        wrapperPath,
+        '#!/bin/bash\nexport HOME=/tmp\nfor arg in "$@"; do if [[ "$arg" =~ ^http ]]; then url="$arg"; fi; done\nexec firefox --headless "$url"\n',
+        { mode: 0o755 }
+      );
+      process.env.CHROME_BIN = wrapperPath;
+    } catch {}
+  }
+}
+
 module.exports = function (config) {
   config.set({
     basePath: "",
